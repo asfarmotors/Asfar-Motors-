@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Asfar Motors — Used Cars & Trade-Ins</title>
+  <style>
+    :root{--accent:#0b5ed7;--bg:#f7f7f8;--card:#ffffff;--muted:#666}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:var(--bg); color:#111}
+    header{background:#fff;border-bottom:1px solid #e6e6e6;position:sticky;top:0;z-index:10}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#0a58a6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    nav{display:flex;gap:16px;margin-left:auto}
+    a.navlink{text-decoration:none;color:#111;padding:8px 10px;border-radius:6px}
+    a.navlink:hover{background:#f1f5ff}
+    .hero{background:linear-gradient(180deg, rgba(11,94,215,0.06), transparent);padding:36px 0}
+    .hero-grid{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:center}
+    .search{background:var(--card);padding:16px;border-radius:10px;box-shadow:0 4px 14px rgba(20,20,40,0.03)}
+    .search input, .search select, .search button, .form-control input, .form-control textarea{width:100%;padding:10px;border:1px solid #e6e6e6;border-radius:8px;font-size:14px}
+    .filters{display:flex;gap:8px;margin-top:10px}
+    .btn{background:var(--accent);color:#fff;border:none;padding:10px 14px;border-radius:8px;cursor:pointer}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:18px}
+    .card{background:var(--card);border-radius:10px;overflow:hidden;box-shadow:0 6px 18px rgba(25,25,60,0.04)}
+    .card img{width:100%;height:160px;object-fit:cover}
+    .card-body{padding:12px}
+    .price{font-weight:700;color:var(--accent)}
+    footer{background:#fff;border-top:1px solid #e6e6e6;padding:20px;margin-top:28px}
+    .split{display:flex;gap:20px}
+    .col{flex:1}
+    @media (max-width:880px){.hero-grid{grid-template-columns:1fr}
+      nav{display:none}
+      .brand{gap:8px}}
+    .small{font-size:13px;color:var(--muted)}
+    .pill{display:inline-block;background:#eef4ff;color:var(--accent);padding:6px 10px;border-radius:999px;font-size:13px}
+    .contact-card{padding:14px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid #eef3ff}
+    .form-row{display:flex;gap:10px}
+    .form-row .col{flex:1}
+    .about p{line-height:1.5}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center;gap:16px">
+      <div class="brand">
+        <div class="logo">AM</div>
+        <div>
+          <div style="font-weight:700">Asfar Motors</div>
+          <div class="small">Used cars • Trade‑ins • Edmonton, AB</div>
+        </div>
+      </div>
+      <nav>
+        <a class="navlink" href="#home">Home</a>
+        <a class="navlink" href="#inventory">Inventory</a>
+        <a class="navlink" href="#tradein">Trade-In</a>
+        <a class="navlink" href="#about">About</a>
+        <a class="navlink" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1 style="margin:0 0 8px">Quality Used Cars, Fair Trade‑Ins</h1>
+          <p class="small">Asfar Motors — reliable used vehicles inspected and ready. Trade in your current vehicle and drive away with confidence.</p>
+
+          <div class="search" style="margin-top:16px">
+            <label class="small">Find a car</label>
+            <div style="display:flex;gap:8px;margin-top:8px">
+              <input id="q" placeholder="Search by make, model or keyword" />
+              <button class="btn" onclick="filterInventory()">Search</button>
+            </div>
+            <div class="filters">
+              <select id="make">
+                <option value="">All makes</option>
+                <option>Honda</option>
+                <option>Toyota</option>
+                <option>Ford</option>
+                <option>Chevrolet</option>
+                <option>Nissan</option>
+              </select>
+              <select id="year">
+                <option value="">Any year</option>
+                <option>2025</option>
+                <option>2022</option>
+                <option>2020</option>
+                <option>2018</option>
+                <option>2015</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+
+        <aside>
+          <div class="contact-card">
+            <div style="font-weight:700">Asfar Motors</div>
+            <div class="small">1234 100 Ave NW, Edmonton, AB</div>
+            <div style="margin-top:8px">Phone: <a href="tel:+17801234567">(780) 123‑4567</a></div>
+            <div>Email: <a href="mailto:info@asfarmotors.com">info@asfarmotors.com</a></div>
+            <div style="margin-top:10px"><span class="pill">Open: Mon–Sat 9am–6pm</span></div>
+          </div>
+
+          <div style="margin-top:12px;background:var(--card);padding:12px;border-radius:10px;border:1px solid #f0f0f0">
+            <div style="font-weight:700;margin-bottom:6px">Quick trade‑in estimate</div>
+            <div class="small">Answer a few questions and we'll give you a ballpark value.</div>
+            <button class="btn" style="margin-top:8px" onclick="document.getElementById('tradein').scrollIntoView({behavior:'smooth'})">Get Estimate</button>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <section id="inventory" class="container" style="padding-top:18px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <h2 style="margin:0">Available Inventory</h2>
+        <div class="small">Showing <span id="count">0</span> vehicles</div>
+      </div>
+
+      <div id="grid" class="grid" style="margin-top:12px">
+        <!-- Cards populated by JS -->
+      </div>
+
+    </section>
+
+    <section id="tradein" class="container" style="padding-top:28px">
+      <h2>Trade‑In Form</h2>
+      <p class="small">Tell us about your vehicle — we'll follow up with an estimate.</p>
+      <form id="tradeForm" onsubmit="submitTrade(event)" style="margin-top:12px">
+        <div class="form-row">
+          <div class="col form-control"><input name="name" placeholder="Your name" required /></div>
+          <div class="col form-control"><input name="phone" placeholder="Phone number" required /></div>
+        </div>
+        <div class="form-row" style="margin-top:8px">
+          <div class="col form-control"><input name="email" type="email" placeholder="Email" required /></div>
+          <div class="col form-control"><input name="mileage" placeholder="Mileage (e.g. 120000)" required /></div>
+        </div>
+        <div style="margin-top:8px" class="form-row">
+          <div class="col form-control"><input name="makeModel" placeholder="Make & Model (e.g. Toyota Corolla)" required /></div>
+          <div class="col form-control"><input name="year" placeholder="Year (e.g. 2018)" required /></div>
+        </div>
+        <div style="margin-top:8px"><textarea name="notes" rows="3" placeholder="Notes (condition, damage, upgrades)"></textarea></div>
+        <div style="margin-top:10px"><button class="btn" type="submit">Send Trade‑In Request</button></div>
+      </form>
+    </section>
+
+    <section id="about" class="container" style="padding-top:28px">
+      <h2>About Asfar Motors</h2>
+      <div class="about" style="margin-top:8px">
+        <p>Asfar Motors is a family‑run used car dealership in Edmonton, Alberta. We focus on reliable pre‑owned vehicles and offer fair trade‑in values. Every car is inspected and prepared by our team before sale.</p>
+        <p class="small">Why customers choose us: transparent pricing, easy trade‑in process, and friendly local service.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="container" style="padding-top:28px;padding-bottom:28px">
+      <h2>Contact & Location</h2>
+      <div class="split" style="margin-top:12px">
+        <div class="col">
+          <p class="small"><strong>Address</strong><br>1234 100 Ave NW, Edmonton, AB</p>
+          <p class="small"><strong>Phone</strong><br><a href="tel:+17801234567">(780) 123‑4567</a></p>
+          <p class="small"><strong>Email</strong><br><a href="mailto:info@asfarmotors.com">info@asfarmotors.com</a></p>
+        </div>
+        <div class="col">
+          <div style="background:#fff;border-radius:8px;padding:12px;border:1px solid #eee">
+            <div style="font-weight:700;margin-bottom:6px">Send us a message</div>
+            <form onsubmit="sendMessage(event)">
+              <input name="name" placeholder="Name" required style="margin-bottom:8px" />
+              <input name="email" placeholder="Email" required style="margin-bottom:8px" />
+              <textarea name="message" rows="3" placeholder="Message" required style="margin-bottom:8px"></textarea>
+              <button class="btn" type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <div style="font-weight:700">Asfar Motors</div>
+        <div class="small">© Asfar Motors — Edmonton, AB</div>
+      </div>
+      <div class="small">Built with care • Simple site</div>
+    </div>
+  </footer>
+
+  <script>
+    // Example inventory data (edit or replace with real data)
+    const inventory = [
+      {id:1,make:'Honda',model:'Civic LX',year:2018,price:15999,miles:82000,img:'https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=800&q=60'},
+      {id:2,make:'Toyota',model:'Corolla LE',year:2019,price:14950,miles:76000,img:'https://images.unsplash.com/photo-1542272605-0b1a1b9b1e2b?auto=format&fit=crop&w=800&q=60'},
+      {id:3,make:'Ford',model:'F-150 XLT',year:2016,price:22999,miles:140000,img:'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=60'},
+      {id:4,make:'Chevrolet',model:'Malibu',year:2017,price:11999,miles:90000,img:'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=800&q=60'},
+      {id:5,make:'Nissan',model:'Rogue S',year:2020,price:18999,miles:54000,img:'https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=800&q=60'}
+    ];
+
+    const grid = document.getElementById('grid');
+    const count = document.getElementById('count');
+
+    function renderList(list){
+      grid.innerHTML = '';
+      list.forEach(v=>{
+        const div = document.createElement('div'); div.className='card';
+        div.innerHTML = `\n          <img src="${v.img}" alt="${v.make} ${v.model}">\n          <div class="card-body">\n            <div style="display:flex;justify-content:space-between;align-items:center">\n              <div>\n                <div style=\"font-weight:700\">${v.year} ${v.make} ${v.model}</div>\n                <div class=\"small\">${v.miles.toLocaleString()} km</div>\n              </div>\n              <div class=\"price\">$${v.price.toLocaleString()}</div>\n            </div>\n            <div style=\"margin-top:10px;display:flex;gap:8px\">\n              <button class=\"btn\" onclick=\"openContact(${v.id})\">Contact</button>\n              <button style=\"padding:8px;border-radius:8px;border:1px solid #e6e6e6;background:transparent;cursor:pointer\" onclick=\"saveFavourite(${v.id})\">Save</button>\n            </div>\n          </div>\n        `;
+        grid.appendChild(div);
+      });
+      count.textContent = list.length;
+    }
+
+    function filterInventory(){
+      const q = document.getElementById('q').value.toLowerCase();
+      const make = document.getElementById('make').value;
+      const year = document.getElementById('year').value;
+      let out = inventory.filter(v=>{
+        if(make && v.make !== make) return false;
+        if(year && String(v.year) !== year) return false;
+        if(q){
+          return (`${v.make} ${v.model} ${v.year}`).toLowerCase().includes(q)
+        }
+        return true;
+      });
+      renderList(out);
+      if(out.length===0){grid.innerHTML='<div class="small">No vehicles found. Try adjusting filters.</div>'}
+    }
+
+    function openContact(id){
+      const v = inventory.find(x=>x.id===id);
+      alert('Contact us about: '+v.year+' '+v.make+' '+v.model+'\nPhone: (780) 123-4567');
+    }
+
+    function saveFavourite(id){
+      alert('Saved to favourites (local demo)');
+    }
+
+    function submitTrade(e){
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      // For real site: send to server. Here we just show a confirmation.
+      alert('Thanks, '+fd.get('name')+"! We'll review your trade‑in and contact you soon.");
+      e.target.reset();
+    }
+
+    function sendMessage(e){
+      e.preventDefault();
+      alert('Message sent — we will reply to you via email.');
+      e.target.reset();
+    }
+
+    // initial render
+    renderList(inventory);
+  </script>
+</body>
+</html>
